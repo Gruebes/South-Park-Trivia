@@ -93,6 +93,8 @@ var wrongAnswers = 0;
 console.log('count : ' + count)
 
 $('.game').hide();
+$('.reset').hide();
+
 
 // function gameSet(){
 
@@ -162,8 +164,7 @@ $('.game').hide();
 		$('#b').html('Wrong Answers: ' + wrongAnswers);
 		$('#c').html('Total Questions: 10');
 		$('#d').html('');
-		$('#reset').show();
-		// $('.answerInput').unbind('click')
+		$('.reset').show();
 	}
 
 	$('.start').on("click", function() {
@@ -205,6 +206,8 @@ $('.game').hide();
 		clearInterval(intervalId)
 		newQuestion();
 		console.log(count)
+		$('.reset').hide();
+
     })
 }
 
