@@ -82,6 +82,14 @@ window.onload = function() {
 			c: 'PS3',
 			d: 'Okama Game Sphere',
 			answer: 'a',
+		},		
+		{
+			question: 'What is phase 2 in the Underpants Gnomes plan?',
+			a: 'Profit',
+			b: '?????',
+			c: 'Collect Underpants',
+			d: 'Kidnap the children',
+			answer: 'b',
 		},
 	]
 
@@ -112,14 +120,6 @@ $('.reset').hide();
 			setTimerInterval()
 	}	
 
-
-
-
-
-
-
-
-
     function counter() {
       timerCount -= 1;
       $('.timer').html("<h2>" + timerCount + "</h2>");
@@ -137,12 +137,6 @@ $('.reset').hide();
 	  intervalId = setInterval( counter, 1000);
 	}
 
-
-
-
-
-
-
 	function result(){
 		clearInterval(intervalId);
 		timerCount = 30;
@@ -154,21 +148,18 @@ $('.reset').hide();
 	  		}
 	}
 
-
-
-
 	function endOfGame() {
 		clearInterval(intervalId);
+		$('.timer').html('');
 		$('.question-display').html('<h1>GAME OVER!<h1>');
 		$('#a').html('Correct Answers: ' + rightAnswers);
 		$('#b').html('Wrong Answers: ' + wrongAnswers);
-		$('#c').html('Total Questions: 10');
+		$('#c').html('Total Questions: ' + triva.length);
 		$('#d').html('');
 		$('.reset').show();
 	}
 
 	$('.start').on("click", function() {
-		// endOfGame()
 		newQuestion();
 		$('.game').show();
 		$('.start-well').hide();
@@ -195,7 +186,6 @@ $('.reset').hide();
     		result();
     	}
     })
-
 
     //BUG: only works when an answer has been previously selected, not an issue if reset is not shown until GAME OVER
     $('.reset').on('click', function(){
