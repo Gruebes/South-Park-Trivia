@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>South Park Trivia - Tanner Gruebele</title>
+
+		<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="assets/css/styles.css"></a> 
+
+	<link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+
+	<script type="text/javascript" src="assets/javascript/app.js"></script>
+</head>
+<body>
+
+<!-- <div class="well well-lg">
+	<button class="start">Start</button>
+</div> -->
+
+
+
+
+<div class="container">
+	<div class="row">
+		<div class="col-sm-8 col-sm-offset-4 col-md-8 col-md-offset-4">
+			<div class="main-header text-center">
+				<h1>South Park Trivia!</h1>
+			</div>
+
+
+			<!-- Use this well to hold start and GameOver results/reset -->
+			<div class="well well-lg start-well">
+				<button class="btn btn-primary start">Start</button>
+			</div>
+			
+			<!-- Trivia Questions and Answers -->
+			<div class="list-group text-center game">
+
+				<div class="blackBoard">
+					<a href="#" class="list-group-item active">
+					 	<div class="timerText">
+						 	<p class="">Question Timer:</p>
+						  	<div class="timer"></div>			 		
+					 	</div>
+
+
+					    <h4 class="list-group-item-heading question-display"></h4>
+					    <p class="correctAnswer">TEST</p>
+					</a>
+				</div>
+				  
+
+
+			  <a class="list-group-item list-group-item-info answerInput" id='a'></a>
+			  <a class="list-group-item list-group-item-info answerInput" id='b'></a>
+			  <a class="list-group-item list-group-item-info answerInput" id='c'></a>
+			  <a class="list-group-item list-group-item-info answerInput" id='d'></a>
+			</div>
+			<button class="btn btn-danger reset" >Reset</button>
+		</div>
+	</div>
+</div>
+	
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</body>
+
+</html>
