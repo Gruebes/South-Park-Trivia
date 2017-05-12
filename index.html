@@ -20,7 +20,7 @@
 
 <div class="main-header text-center"><h1>South Park Trivia!</h1></div>
 
-<div class="start-well">
+<div class="button-well">
 	<button class="button start">Start</button>
 </div>
 
@@ -35,26 +35,41 @@
 					</div>
 
 					<h4 class="text-center question-display"></h4>
-					<p class="correctAnswer"></p>
 
 					<div class="container-fluid">
 
-						<div class="row">
+						<div class="row answerRow">
 							<div class="col-xs-6 col-sm-6 col-md-6  col-lg-6">
 								<button class="answerInput" id='a'></button>
+							</div>
+							<div class="col-xs-6 col-sm-6 col-md-6  col-lg-6">
 								<button class="answerInput" id='b'></button>
 							</div>
-
+						</div>
+						<div class="row answerRow">
 							<div class="col-xs-6 col-sm-6 col-md-6  col-lg-6">
 								<button class="answerInput" id='c'></button>
+							</div>
+							<div class="col-xs-6 col-sm-6 col-md-6  col-lg-6">
 								<button class="answerInput" id='d'></button>
 							</div>
 						</div>
+
+						<div class="row resultRow">
+							<div class="col-xs-12 col-sm-12 col-md-12  col-lg-12">
+								<button class="answerInput noMarg" id='right'></button>
+								<button class="answerInput noMarg" id='wrong'></button>
+								<button class="answerInput noMarg" id='total'></button>
+							</div>
+						</div>
+
+
+
 					</div>
 					<div id="chalk"></div>
 				</div>
 
-			<div class="start-well">
+			<div class="button-well">
 				<button class="button reset">Reset Game</button>
 			</div>
 

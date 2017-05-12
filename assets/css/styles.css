@@ -1,8 +1,4 @@
-/* .animate for number popover*/
-/* Different background for Small and XS screens*/
-	/* md and lg will have outside South Park w/ codepen boys underneith*/
-	/* sm and xs will have classroom with Garrison's desk below */
-
+/* TODO: .animate for number popover*/
 
 @font-face {
     font-family: southpark;
@@ -27,10 +23,9 @@ body {
 	text-shadow: 2px 2px #000;
 }
 
-.start-well {
+.button-well {
 	display: flex;
 	justify-content: center;
-	/*align-items: flex-end;*/
 	height: 100%;
 	background-color: transparent;
 	border-color: transparent;
@@ -43,6 +38,7 @@ body {
     border-color: black;
     padding-top: 15px;
 }
+
 .start {
 	background-color: lightgrey;
 }
