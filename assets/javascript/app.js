@@ -165,7 +165,7 @@ window.onload = function() {
   		console.log('count : ' + count)
   		// setTimeout(newQuestion, 3000);
 	  		if(count  === trivia.length) {
-	  			endOfGame();
+	  			setTimeout(endOfGame, 3000)
 	  		} else {
 	  			setTimeout(newQuestion, 3000);
 	  		}
