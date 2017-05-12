@@ -1,25 +1,18 @@
 /* .animate for number popover*/
+/* Different background for Small and XS screens*/
+	/* md and lg will have outside South Park w/ codepen boys underneith*/
+	/* sm and xs will have classroom with Garrison's desk below */
 
-@font-face {
-    font-family: chawp;
-    src: url(../fonts/chawp.ttf);
-    font-weight: bold;
-}
+
 @font-face {
     font-family: southpark;
     src: url(../fonts/southpark.ttf);
     font-weight: bold;
 }
-@font-face {
-    font-family: SqueakyChalkSound;
-    src: url(../fonts/SqueakyChalkSound.ttf);
-    font-weight: bold;
-}
 
 body {
-	background: url('../images/south-park.jpg')no-repeat center center fixed;
+	background: url('../images/Bus-Stop.jpg')no-repeat center left fixed;
 	background-size: cover;
-	/*font-family: chawp;*/
 	height: 100%;
 }
 
@@ -29,7 +22,7 @@ body {
 	color: white;
 }
 .main-header h1 {
-	font-size: 3em;
+	font-size: 4em;
 	-webkit-text-stroke: 1px black;
 	text-shadow: 2px 2px #000;
 }
@@ -37,8 +30,10 @@ body {
 .start-well {
 	display: flex;
 	justify-content: center;
-	align-items: center;
-	height: 12em;
+	align-items: flex-end;
+	height: 100%;
+	background-color: transparent;
+	border-color: transparent;
 }
 
 .start {
@@ -47,30 +42,34 @@ body {
 	width: 4em;
 }
 
-.blackBoard {
-/*	background: url('../images/chalkboard.jpg')no-repeat center center fixed;
-	background-color: black;*/
-
+@media (max-width: 992px) {
+	
 }
 
-.timerText {
-	position: absolute;
-    right: 10px;
-}
-.timer {
-    position: relative;
-    top: -20px;
-}
-
-.question-display {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-    font-family: chawp;
-	height: 100px;
-	margin-top: 40px;
+@media (max-width: 800px) {
+	body {
+		background: url('../images/Bus-Stop.jpg')no-repeat center center fixed;
+		background-size: cover;
+		height: 100%;
+	}
 }
 
-.answerInput {
-	/*margin: 5px 0;*/
+@media (max-width: 600px) {
+	.main-header {
+    	font-size: .75em;
+    }
 }
+
+@media (max-width: 450px) {
+	.main-header {
+    	font-size: .55em;
+  }
+}
+
+@media (max-width: 350px) { 
+	.main-header {
+    	font-size: .5em;
+    }
+}
+
+

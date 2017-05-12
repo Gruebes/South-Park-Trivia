@@ -4,7 +4,7 @@ window.onload = function() {
 
 	var trivia = [
 		{
-			question: 'Cartman\'s favorite toy/stuffed animal',
+			question: 'Who is Cartman\'s favorite stuffed animal?',
 			a: 'Muscle Man Marc',
 			b: 'Clyde Frog',
 			c: 'Rumpertumskin',
@@ -20,6 +20,7 @@ window.onload = function() {
 			answer: 'd',
 		},
 		{
+			//replace
 			question: 'When is global warming going to strike?',
 			a: 'Two Days Before the Day After Tomorrow',
 			b: 'The Day Before Tomorrow',
@@ -68,14 +69,6 @@ window.onload = function() {
 			answer: 'c',
 		},
 		{
-			question: 'Who must Randy apologize to for saying the "N-word" on television',
-			a: 'Oprah\'s Minge',
-			b: 'Token\'s Family',
-			c: 'Chef',
-			d: 'Jesse Jackson',
-			answer: 'd',
-		},
-		{
 			question: 'In "Best Friends Forever," Kenny commands the armies of Heaven with "the Golden _____"',
 			a: 'PSP',
 			b: 'XBOX ONE',
@@ -100,23 +93,31 @@ var rightAnswers = 0;
 var wrongAnswers = 0;
 console.log('count : ' + count)
 
-$('.game').hide();
+$('.chalkboard').hide();
 $('.reset').hide();
 
+$(document).on("click", ".start", sign);
 
-// function gameSet(){
+function sign() {
+  if ( $( '.logo' ).is( ":hidden" ) ) {
+    $( '.logo' ).slideDown( "slow" );
+  } 
+  else {
+    $('.logo').slideUp("slow");
+  }
+};
+sign();
 
-// }
-// gameSet();
+
 
 
 	function newQuestion() {
 			$('.timer').html('<h2>30</h2>');
 			$('.question-display').html(trivia[count].question);
-			$('#a').html(trivia[count].a);
-			$('#b').html(trivia[count].b);
-			$('#c').html(trivia[count].c);
-			$('#d').html(trivia[count].d);
+			$('#a').html('A). ' + trivia[count].a);
+			$('#b').html('B). ' + trivia[count].b);
+			$('#c').html('C). ' + trivia[count].c);
+			$('#d').html('D). ' + trivia[count].d);
 			setTimerInterval()
 	}	
 
@@ -127,7 +128,7 @@ $('.reset').hide();
 	      	if(count === trivia.length) {
 	      	endOfGame();
 	      	} else {
-	      	$('.question-display').html('<h1>Opps! Out of Time!<h1>');
+	      	$('.question-display').html('<h1>Oppsie Dasies! <br> You ran ut of Time!<h1>');
 	      	result();
 	    	}
   		}
@@ -146,41 +147,41 @@ $('.reset').hide();
 	  		if(count  === trivia.length) {
 	  			endOfGame();
 	  		}
+
+	  		console.log('count: ' + count)
+	  		console.log('trivia.length: ' + trivia.length)
 	}
 
 	function endOfGame() {
 		clearInterval(intervalId);
+			// if ()
+
 		$('.timer').html('');
 		$('.question-display').html('<h1>GAME OVER!<h1>');
 		$('#a').html('Correct Answers: ' + rightAnswers);
 		$('#b').html('Wrong Answers: ' + wrongAnswers);
-		$('#c').html('Total Questions: ' + triva.length);
+		$('#c').html('Total Questions: ' + trivia.length);
 		$('#d').html('');
 		$('.reset').show();
 	}
 
 	$('.start').on("click", function() {
 		newQuestion();
-		$('.game').show();
+		$('.chalkboard').hide().delay(400).fadeIn();
+		$('.theBoys').hide().delay(300).fadeIn();
 		$('.start-well').hide();
 	})
 
     $('.answerInput').on('click', function(){
 
-    	//TRY -- Making answer equal to a string that is comparted to the input of the click 
-    	// -- this could then be displayed as the showAnswer
-    	//findQuestion = trivia[count]; //testing
-    	//showAnswer = trivia[count].answer;// testing
-    	// console.log('trivia[0]: ' + trivia[0]);
-    	// console.log('showAnswer: ' + showAnswer);
-    	// console.log('findQuestion: ' + findQuestion);
-
     	if(this.id === trivia[count].answer) {
-    		$('.question-display').html('<h1>Correct!<h1>');
+    		$('.question-display')
+    		.html($('<h1>Correct!<h1>')
+			.css({'color' : 'limeGreen'}));
     		rightAnswers++
     		result();
     	} else {
-    		$('.question-display').html('<h1>Opps! That\'s Wrong <h1>');
+    		$('.question-display').html($('<h1>Opps! That\'s Wrong <h1>').css({'color' : 'red'}));
     		$('.correctAnswer').html()//testing
     		wrongAnswers++
     		result();
