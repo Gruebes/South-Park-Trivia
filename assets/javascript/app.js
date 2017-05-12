@@ -11,79 +11,79 @@ window.onload = function() {
 			d: 'Eric',
 			answer: 'b',
 		},
-		{
-			question: 'What movie did Kenny and Stan see and immediately demand a refund?',
-			a: 'The Dark Knight',
-			b: 'High School Musical',
-			c: 'Avatar',
-			d: 'The Passion of the Christ',
-			answer: 'd',
-		},
-		{
-			//replace
-			question: 'When is global warming going to strike?',
-			a: 'Two Days Before the Day After Tomorrow',
-			b: 'The Day Before Tomorrow',
-			c: 'Two Days After the Day Before Tomorrow',
-			d: 'Two Days After the Day After Tomorrow',
-			answer: 'a',
-		},
-		{
-			question: 'Who is Stan\'s fairly steady girlfriend?',
-			a: 'Bebe',
-			b: 'Heidi',
-			c: 'Wendy',
-			d: 'Shelly',
-			answer: 'c',
-		},	
-		{
-			question: 'Who is Scuttlebutt\'s leg?',
-			a: 'Jay Leno',
-			b: 'Martha Stewart',
-			c: 'Patrick Duffy',
-			d: 'Barbara Streisand',
-			answer: 'c',
-		},
-		{
-			question: 'Who is all locked in the closet with Tom Cruze?',
-			a: 'Kanye West and Justin Beiber',
-			b: 'John Travolta and R. Kelly',
-			c: 'Mr Garrison and Mr Slave',
-			d: 'Randy Marsh and John Travolta',
-			answer: 'b',
-		},
-		{
-			question: 'What do the Canadians want when they go on strike?',
-			a: 'Internet Money',
-			b: 'Gumballs',
-			c: 'United States Land',
-			d: 'Bennigan\'s coupons',
-			answer: 'a',
-		},
-		{
-			question: 'Who is Cartman\'s Father?',
-			a: 'Mufesto',
-			b: 'The 89 Denver Broncos',
-			c: 'Jack Tenorman',
-			d: 'Cartman\'s mom',
-			answer: 'c',
-		},
-		{
-			question: 'In "Best Friends Forever," Kenny commands the armies of Heaven with "the Golden _____"',
-			a: 'PSP',
-			b: 'XBOX ONE',
-			c: 'PS3',
-			d: 'Okama Game Sphere',
-			answer: 'a',
-		},		
-		{
-			question: 'What is phase 2 in the Underpants Gnomes plan?',
-			a: 'Profit',
-			b: '?????',
-			c: 'Collect Underpants',
-			d: 'Kidnap the children',
-			answer: 'b',
-		},
+		// {
+		// 	question: 'What movie did Kenny and Stan see and immediately demand a refund?',
+		// 	a: 'The Dark Knight',
+		// 	b: 'High School Musical',
+		// 	c: 'Avatar',
+		// 	d: 'The Passion of the Christ',
+		// 	answer: 'd',
+		// },
+		// {
+		// 	//replace
+		// 	question: 'When is global warming going to strike?',
+		// 	a: 'Two Days Before the Day After Tomorrow',
+		// 	b: 'The Day Before Tomorrow',
+		// 	c: 'Two Days After the Day Before Tomorrow',
+		// 	d: 'Two Days After the Day After Tomorrow',
+		// 	answer: 'a',
+		// },
+		// {
+		// 	question: 'Who is Stan\'s fairly steady girlfriend?',
+		// 	a: 'Bebe',
+		// 	b: 'Heidi',
+		// 	c: 'Wendy',
+		// 	d: 'Shelly',
+		// 	answer: 'c',
+		// },	
+		// {
+		// 	question: 'Who is Scuttlebutt\'s leg?',
+		// 	a: 'Jay Leno',
+		// 	b: 'Martha Stewart',
+		// 	c: 'Patrick Duffy',
+		// 	d: 'Barbara Streisand',
+		// 	answer: 'c',
+		// },
+		// {
+		// 	question: 'Who is all locked in the closet with Tom Cruze?',
+		// 	a: 'Kanye West and Justin Beiber',
+		// 	b: 'John Travolta and R. Kelly',
+		// 	c: 'Mr Garrison and Mr Slave',
+		// 	d: 'Randy Marsh and John Travolta',
+		// 	answer: 'b',
+		// },
+		// {
+		// 	question: 'What do the Canadians want when they go on strike?',
+		// 	a: 'Internet Money',
+		// 	b: 'Gumballs',
+		// 	c: 'United States Land',
+		// 	d: 'Bennigan\'s coupons',
+		// 	answer: 'a',
+		// },
+		// {
+		// 	question: 'Who is Cartman\'s Father?',
+		// 	a: 'Mufesto',
+		// 	b: 'The 89 Denver Broncos',
+		// 	c: 'Jack Tenorman',
+		// 	d: 'Cartman\'s mom',
+		// 	answer: 'c',
+		// },
+		// {
+		// 	question: 'In "Best Friends Forever," Kenny commands the armies of Heaven with "the Golden _____"',
+		// 	a: 'PSP',
+		// 	b: 'XBOX ONE',
+		// 	c: 'PS3',
+		// 	d: 'Okama Game Sphere',
+		// 	answer: 'a',
+		// },		
+		// {
+		// 	question: 'What is phase 2 in the Underpants Gnomes plan?',
+		// 	a: 'Profit',
+		// 	b: '?????',
+		// 	c: 'Collect Underpants',
+		// 	d: 'Kidnap the children',
+		// 	answer: 'b',
+		// },
 	]
 
 var intervalId;
@@ -95,6 +95,7 @@ console.log('count : ' + count)
 
 $('.chalkboard').hide();
 $('.reset').hide();
+// $('.start').hide();
 
 $(document).on("click", ".start", sign);
 

@@ -58,7 +58,7 @@
 }
 
 .timer h2 {
-	font-size: 1em;
+	font-size: 2em;
 }
 
 .question-display {
@@ -131,8 +131,6 @@
 	}
 }
 
-
-
 @media (max-width: 600px) {
 
 	.answerInput {
@@ -170,7 +168,6 @@
 	.answerInput {
 		font-size: .8em;
   	}
-
 }
 
 @media (max-width: 350px) {

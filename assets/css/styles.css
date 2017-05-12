@@ -11,7 +11,7 @@
 }
 
 body {
-	background: url('../images/Bus-Stop.jpg')no-repeat center left fixed;
+	background: url('../images/Bus-stop.jpg')no-repeat center left fixed;
 	background-size: cover;
 	height: 100%;
 }
@@ -30,16 +30,32 @@ body {
 .start-well {
 	display: flex;
 	justify-content: center;
-	align-items: flex-end;
+	/*align-items: flex-end;*/
 	height: 100%;
 	background-color: transparent;
 	border-color: transparent;
 }
 
+.button {
+    font-family: southpark;
+    font-size: 4em;
+    width: 5em;
+    border-color: black;
+    padding-top: 15px;
+}
 .start {
-	font-size: 3em;
-	height: 2em;
-	width: 4em;
+	background-color: lightgrey;
+}
+
+.reset {
+    font-size: 2em;
+    width: 8em;
+    border-color: black;
+    background-color: white;
+    padding-top: 15px;
+    margin-top: 15px;
+}
+
 }
 
 @media (max-width: 992px) {
@@ -48,7 +64,7 @@ body {
 
 @media (max-width: 800px) {
 	body {
-		background: url('../images/Bus-Stop.jpg')no-repeat center center fixed;
+		background: url('../images/Bus-stop.jpg')no-repeat center center fixed;
 		background-size: cover;
 		height: 100%;
 	}
