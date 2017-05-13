@@ -52,10 +52,43 @@ body {
     margin-top: 15px;
 }
 
+/* SouthPark Sign */
+.logo {
+	position: absolute;
+	display: none;
+    bottom: 19%;
+    right: 15%;
+	z-index: -1;
+	height: 295px;
+	width: 260px;
+	background: url('http://vignette2.wikia.nocookie.net/logopedia/images/b/bc/South_Park_Logo.svg/revision/latest?cb=20150317201007') no-repeat;
+	background-size: 260px;
+}
+
+/* Characters on bottom on page */
+.theBoys {
+	position: absolute;
+	display: none;
+    bottom: 4%;
+    right: 15%;
+	z-index: -1;
+	height: 295px;
+	width: 600px;
+	background: url('../images/spark-chars.png') no-repeat;
+	background-size: 600px;
+}
+
+
+@media (max-width: 1050px) {
+	.theBoys {
+	    right: 10%;
+	}
 }
 
 @media (max-width: 992px) {
-	
+	.theBoys {
+	    right: 5%;
+	}
 }
 
 @media (max-width: 800px) {
@@ -66,10 +99,30 @@ body {
 	}
 }
 
+@media (max-width: 700px) {
+	.theBoys {
+	    bottom: 16%;
+	    right: 7%;
+	    height: 170px;
+	    width: 500px;
+	    background-size: 500px;
+	}
+}
+
 @media (max-width: 600px) {
 	.main-header {
     	font-size: .75em;
     }
+}
+
+@media (max-width: 550px) {
+	.theBoys {
+	    bottom: 16%;
+	    right: 8%;
+	    height: 100px;
+	    width: 300px;
+	    background-size: 300px;
+	}
 }
 
 @media (max-width: 450px) {
@@ -82,6 +135,10 @@ body {
 	.main-header {
     	font-size: .5em;
     }
+
+	.theBoys {
+	    right: 5%;
+	}
 }
 
 

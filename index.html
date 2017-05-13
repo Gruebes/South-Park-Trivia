@@ -28,51 +28,58 @@
 	<div class="row">
 		<div class="col-xs-10 col-xs-offset-1  col-sm-9 col-sm-offset-3  col-md-9 col-md-offset-3  col-lg-7  col-lg-offset-4">
 				<!-- Chalkboard Starts Here -->
-				<div class='chalkboard'>
-					<div class="timerText">
-						<p class="">Question Timer:</p>
-						<div class="text-center timer"></div> 		
-					</div>
+			<div class='chalkboard'>
 
-					<h4 class="text-center question-display"></h4>
-
-					<div class="container-fluid">
-
-						<div class="row answerRow">
-							<div class="col-xs-6 col-sm-6 col-md-6  col-lg-6">
-								<button class="answerInput" id='a'></button>
-							</div>
-							<div class="col-xs-6 col-sm-6 col-md-6  col-lg-6">
-								<button class="answerInput" id='b'></button>
-							</div>
-						</div>
-						<div class="row answerRow">
-							<div class="col-xs-6 col-sm-6 col-md-6  col-lg-6">
-								<button class="answerInput" id='c'></button>
-							</div>
-							<div class="col-xs-6 col-sm-6 col-md-6  col-lg-6">
-								<button class="answerInput" id='d'></button>
-							</div>
-						</div>
-
-						<div class="row resultRow">
-							<div class="col-xs-12 col-sm-12 col-md-12  col-lg-12">
-								<button class="answerInput noMarg" id='right'></button>
-								<button class="answerInput noMarg" id='wrong'></button>
-								<button class="answerInput noMarg" id='total'></button>
-							</div>
-						</div>
-
-
-
-					</div>
-					<div id="chalk"></div>
+				<div class="timerText">
+					<p class="">Question Timer:</p>
+					<div class="text-center timer"></div> 		
 				</div>
 
-			<div class="button-well">
-				<button class="button reset">Reset Game</button>
-			</div>
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+							<div class="topOfBoard">
+								<h4 class="text-center question-display"></h4>
+								<div class="correctAnswer text-center"></div>
+							</div>
+						</div>
+					</div>
+				</div>
 
+				<div class="container-fluid">
+					<div class="row answerRow">
+						<div class="col-xs-6 col-sm-6 col-md-6  col-lg-6">
+							<button class="answerInput" id='a'></button>
+						</div>
+						<div class="col-xs-6 col-sm-6 col-md-6  col-lg-6">
+							<button class="answerInput" id='b'></button>
+						</div>
+					</div>
+					<div class="row answerRow">
+						<div class="col-xs-6 col-sm-6 col-md-6  col-lg-6">
+							<button class="answerInput" id='c'></button>
+						</div>
+						<div class="col-xs-6 col-sm-6 col-md-6  col-lg-6">
+							<button class="answerInput" id='d'></button>
+						</div>
+					</div>
+
+					<div class="row resultRow">
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+							<button class="answerInput noMarg" id='right'></button>
+							<button class="answerInput noMarg" id='wrong'></button>
+							<button class="answerInput noMarg" id='total'></button>
+						</div>
+					</div>
+
+				</div>
+				<div id="chalk"></div>
+				</div>
+
+				<div class="button-well">
+					<button class="button reset">Reset Game</button>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>

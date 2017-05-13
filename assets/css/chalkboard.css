@@ -1,14 +1,11 @@
 @import url(https://fonts.googleapis.com/css?family=Walter+Turncoat);
 
 .chalkboard {
-  /*font-size: 40px;*/
   color: #E8E8E8;
   font-family: "Walter Turncoat", cursive;
   display: block;
-  /*width: 80%;*/
   height: 80%;
   min-height: auto;
-  /*margin: 30px auto 0 auto;*/
   background-color: #497959;
   padding: 20px 10px 0;
   overflow-y: auto;
@@ -66,8 +63,22 @@
 	justify-content: center;
 	align-items: center;
 	font-size: 1.5em;
+
+}
+
+.question-display h1, .question-display h2 {
+	margin: 0;
+}
+
+.topOfBoard {
 	height: 70px;
 	margin-top: 40px;
+	margin-bottom: 22px;
+}
+
+.correctAnswer {
+	font-size: 1.5em;
+	color: lightgoldenrodyellow;
 }
 
 .answerInput {
@@ -77,90 +88,56 @@
 	border: none;
 	margin-bottom: 10px;
 }
-.noMarg {
-	margin: 0; 
-}
 
 .answerInput:focus {
     outline: none;
 }
 
-/* SouthPark Sign */
-.logo {
-	position: absolute;
-	display: none;
-    bottom: 19%;
-    right: 15%;
-	z-index: -1;
-	height: 295px;
-	width: 260px;
-	background: url('http://vignette2.wikia.nocookie.net/logopedia/images/b/bc/South_Park_Logo.svg/revision/latest?cb=20150317201007') no-repeat;
-	background-size: 260px;
-}
-
-/* The Boys */
-.theBoys {
-	position: absolute;
-	display: none;
-    bottom: 4%;
-    right: 15%;
-	z-index: -1;
-	height: 295px;
-	width: 600px;
-	background: url('../images/spark-chars.png') no-repeat;
-	background-size: 600px;
-}
-
-@media (max-width: 1050px) {
-	.theBoys {
-	    right: 10%;
+@media (max-width: 700px) {
+	.topOfBoard {
+		margin-bottom: 15px;
 	}
-}
-
-@media (max-width: 992px) {
-	.theBoys {
-	    right: 5%;
+	.correctAnswer {
+		font-size: 1.2em;
 	}
-}
-
-@media (max-width: 650px) {
-	.theBoys {
-	    bottom: 16%;
-	    right: 7%;
-	    height: 170px;
-	    width: 500px;
-	    background-size: 500px;
+	
+	.question-display h1, .question-display h2 {
+	    font-size: 1.2em;
 	}
 }
 
 @media (max-width: 600px) {
 	.answerInput {
-		font-size: 1.2em;
+		font-size: 1.1em;
   	}
+
+	.correctAnswer {
+		font-size: 1em;
+	}
 }
 
 @media (max-width: 550px) {
-	.theBoys {
-	    bottom: 16%;
-	    right: 8%;
-	    height: 100px;
-	    width: 300px;
-	    background-size: 300px;
+	.question-display {
+	    font-size: 1em;
+	}
+
+	.question-display h1, .question-display h2 {
+		font-size: 1.2em;
+	}
+
+	.topOfBoard {
+		height: 55px;
 	}
 }
 
 @media (max-width: 500px) {
-	.question-display {
-	    font-size: 1em;
-	    height: 50px;
-	    margin-top: 20px;
-	}
+
   	.timer h2 {
 		font-size: 1.1em;
 	}
 
-	.question-display h1, .question-display h2 {
-		font-size: 1.3em;
+	.correctAnswer {
+		font-size: .9em;
 	}
 
 	.answerInput {
@@ -168,9 +145,21 @@
   	}
 }
 
+@media (max-width: 405px) {
+	.question-display h1, .question-display h2 {
+		font-size: 1.1em;
+	}
+
+	.answerInput {
+	    font-size: .7em;
+	}
+
 @media (max-width: 350px) {
-	.theBoys {
-	    right: 5%;
+	.question-display h1, .question-display h2 {
+		font-size: 1em;
+	}
+	.correctAnswer {
+		font-size: .9em;
 	}
 }
 

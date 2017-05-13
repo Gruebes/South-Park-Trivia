@@ -4,53 +4,59 @@ window.onload = function() {
 
 	var trivia = [
 		{
-			question: 'Who is Cartman\'s favorite stuffed animal?',
+			question: 'What is the name of Cartman\'s favorite stuffed animal?',
 			a: 'Muscle Man Marc',
 			b: 'Clyde Frog',
 			c: 'Rumpertumskin',
 			d: 'Peter Panda',
 			answer: 'b',
+			correct: 'Clyde Frog',
 		},
 		{
-			question: 'What movie did Kenny and Stan see and immediately demand a refund?',
+			question: 'What movie did Kenny and Stan see which sent them on a mission for a refund?',
 			a: 'The Dark Knight',
 			b: 'High School Musical',
 			c: 'Avatar',
 			d: 'The Passion of the Christ',
 			answer: 'd',
+			correct: 'The Passion of the Christ',
 		},
 		{
 			//replace
-			question: 'Whow is believed to be the mormon prophet?',
+			question: 'Which of the characters is at one time believed to be the mormon prophet?',
 			a: 'Stan',
 			b: 'Kenny',
 			c: 'Butters',
 			d: 'Randy',
 			answer: 'a',
+			correct: 'Stan',
 		},
 		{
-			question: 'Who is Stan\'s fairly steady girlfriend?',
+			question: 'What is the name of Stan\'s longtime girlfriend?',
 			a: 'Bebe',
 			b: 'Heidi',
 			c: 'Wendy',
 			d: 'Shelly',
 			answer: 'c',
+			correct: 'Wendy',
 		},	
 		{
-			question: 'Who is Scuttlebutt\'s leg?',
+			question: 'Who does Scuttlebutt have for a leg?',
 			a: 'Jay Leno',
 			b: 'Martha Stewart',
 			c: 'Patrick Duffy',
 			d: 'Barbara Streisand',
 			answer: 'c',
+			correct: 'Patrick Duffy',
 		},
 		{
-			question: 'Who is all locked in the closet with Tom Cruz?',
+			question: 'Who all locked themselves in the closet with Tom Cruz?',
 			a: 'Kanye West and Justin Beiber',
 			b: 'John Travolta and R. Kelly',
 			c: 'Mr Garrison and Mr Slave',
 			d: 'Randy Marsh and John Travolta',
 			answer: 'b',
+			correct: 'John Travolta and R. Kelly',
 		},
 		{
 			question: 'What do the Canadians want when they go on strike?',
@@ -59,14 +65,16 @@ window.onload = function() {
 			c: 'United States Land',
 			d: 'Bennigan\'s coupons',
 			answer: 'a',
+			correct: 'Internet Money',
 		},
 		{
 			question: 'Who is Cartman\'s Father?',
 			a: 'Mufesto',
-			b: 'The 89 Denver Broncos',
+			b: 'The \'89 Denver Broncos',
 			c: 'Jack Tenorman',
 			d: 'Cartman\'s mom',
 			answer: 'c',
+			correct: 'Jack Tenorman',
 		},
 		{
 			question: 'In "Best Friends Forever," Kenny commands the armies of Heaven with "the Golden _____"',
@@ -75,14 +83,16 @@ window.onload = function() {
 			c: 'PS3',
 			d: 'Okama Game Sphere',
 			answer: 'a',
+			correct: 'PSP',
 		},		
 		{
-			question: 'What is phase 2 in the Underpants Gnomes plan?',
+			question: 'What is phase 2 in the Underpants Gnomes ultimate plan?',
 			a: 'Profit',
 			b: '?????',
 			c: 'Collect Underpants',
 			d: 'Kidnap the children',
 			answer: 'b',
+			correct: '?????',
 		},			
 	]
 
@@ -116,6 +126,7 @@ window.onload = function() {
 	})
 
 	function newQuestion() {
+			$('.correctAnswer').empty()
 			$('.timer').html('<h2>30</h2>');
 			$('.question-display').html(trivia[count].question);
 			$('#a').html('A). ' + trivia[count].a);
@@ -136,7 +147,8 @@ window.onload = function() {
 	      	if(count === trivia.length) {
 	      	endOfGame();
 	      	} else {
-	      	$('.question-display').html('<h1>Oopsie Dasies! <br> You ran oot of Time!<h1>');
+	      	$('.question-display').html('<h2>Ohh Noo! You ran oot of time<h2>');
+	      	$('.correctAnswer').html('Correct Answer: ' + trivia[count].correct);
 	      	result();
 	    	}
   		}
@@ -151,8 +163,8 @@ window.onload = function() {
     		rightAnswers++
     		result();
     	} else {
-    		$('.question-display').html($('<h1>Soory, Guy! Wrong Answer<h1>').css({'color' : 'yellow'}));
-    		$('.correctAnswer').html()//testing
+    		$('.question-display').html($('<h2>Soo-ry, Guy! Wrong Answer<h2>').css({'color' : 'yellow'}));
+    		$('.correctAnswer').html('Correct Answer: ' + trivia[count].correct);
     		wrongAnswers++
     		result();
     	}
@@ -183,8 +195,9 @@ window.onload = function() {
 
 			} else {
 				$('.question-display').html('<h2>That was just terrible, Guy!</h2>');
-			}
+			};
 
+		$('.correctAnswer').empty()
 		$('.answerRow').hide();
 		$('.resultRow').show();
 		$('.timer').html('');
