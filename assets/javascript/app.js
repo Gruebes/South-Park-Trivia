@@ -125,7 +125,6 @@ $( document ).ready(function() {
 
 	function newQuestion() {
 			timerCount = 30;
-  			count++;
 			$('.correctAnswer').empty()
 			$('.timer').html('<h2>30</h2>');
 			$('.answerInput').prop('disabled', false);
@@ -154,7 +153,7 @@ $( document ).ready(function() {
 	      	} else {
 	      	$('.question-display').html('<h2>Ohh Noo! You ran oot of time<h2>');
 	      	$('.correctAnswer').html('Correct Answer: ' + trivia[count].correct);
-	      	result();
+	      	isGameOver();
 	    	}
   		}
     }
@@ -163,27 +162,28 @@ $( document ).ready(function() {
 
     function rightWrong () {
     	$('.answerInput').prop('disabled', true);
-    	clearInterval(intervalId);
     	if(this.id === trivia[count].answer) {
     		$('.question-display')
     		.html($('<h1>That\'s correct, Buddy!<h1>')
 			.css({'color' : 'limeGreen'}));
     		rightAnswers++
-    		result();
+    		isGameOver();
     	} else {
     		$('.question-display').html($('<h2>Soo-ry, Guy! Wrong Answer<h2>').css({'color' : 'yellow'}));
     		$('.correctAnswer').html('Correct Answer: ' + trivia[count].correct);
     		wrongAnswers++
-    		result();
+    		isGameOver();
     	}
     }
 
-	function result(){
-	  		if(count  === trivia.length) {
-	  			setTimeout(endOfGame, 3000)
-	  		} else {
-	  			setTimeout(newQuestion, 3000);
-	  		}
+	function isGameOver(){
+		count++
+		clearInterval(intervalId);
+  		if(count  === trivia.length) {
+  			setTimeout(endOfGame, 3000)
+  		} else {
+  			setTimeout(newQuestion, 3000);
+  		}
 	}
 
 	function terrancePhillip () {
