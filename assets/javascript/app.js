@@ -1,6 +1,6 @@
 // https://opentdb.com/api_config.php
 
-window.onload = function() {
+$( document ).ready(function() {
 
 	var trivia = [
 		{
@@ -50,7 +50,7 @@ window.onload = function() {
 			correct: 'Patrick Duffy',
 		},
 		{
-			question: 'Who all locked themselves in the closet with Tom Cruz?',
+			question: 'Who all locked themselves in the closet with Tom Cruise?',
 			a: 'Kanye West and Justin Beiber',
 			b: 'John Travolta and R. Kelly',
 			c: 'Mr Garrison and Mr Slave',
@@ -105,23 +105,21 @@ window.onload = function() {
 	$('.chalkboard').hide();
 	$('.resultRow').hide();
 	$('.reset').hide();
-
-	$(document).on("click", ".start", sign);
-	function sign() {
-	  if ( $( '.logo' ).is( ":hidden" ) ) {
-	    $( '.logo' ).slideDown( "slow" );
-	  } 
-	  else {
-	    $('.logo').slideUp("slow");
-	  }
-	};
 	sign();
 
+	function sign() {
+	  if ( $( '.logo' ).is( ":hidden" ) ) {
+	    $( '.logo' ).slideDown(800);
+	  } else {
+	    $('.logo').slideUp(1000);
+	  }
+	};
 
 	$('.start').on("click", function() {
-		newQuestion();
-		$('.chalkboard').hide().delay(400).fadeIn();
-		$('.theBoys').hide().delay(300).fadeIn();
+		sign();
+		setTimeout(newQuestion, 2000)
+		$('.chalkboard').hide().delay(1000).fadeIn(800);
+		$('.theBoys').hide().delay(800).fadeIn(500);
 		$('.start').hide();
 	})
 
@@ -143,6 +141,10 @@ window.onload = function() {
     function counter() {
       timerCount -= 1;
       $('.timer').html("<h2>" + timerCount + "</h2>");
+      outOfTimeCheck ()
+    }
+
+    function outOfTimeCheck () {
     	if (timerCount === 0) {
 	      	if(count === trivia.length) {
 	      	endOfGame();
@@ -154,8 +156,9 @@ window.onload = function() {
   		}
     }
 
-    $('.answerInput').on('click', function(){
+    $(document).on("click", ".answerInput", rightWrong);
 
+    function rightWrong () {
     	if(this.id === trivia[count].answer) {
     		$('.question-display')
     		.html($('<h1>That\'s correct, Buddy!<h1>')
@@ -168,27 +171,21 @@ window.onload = function() {
     		wrongAnswers++
     		result();
     	}
-    })
+    }
 
 	function result(){
 		clearInterval(intervalId);
 		timerCount = 30;
   		count++;
-  		console.log('count : ' + count)
-  		// setTimeout(newQuestion, 3000);
 	  		if(count  === trivia.length) {
 	  			setTimeout(endOfGame, 3000)
 	  		} else {
 	  			setTimeout(newQuestion, 3000);
 	  		}
-
-	  		console.log('count: ' + count)
-	  		console.log('trivia.length: ' + trivia.length)
 	}
 
-	function endOfGame() {
-		clearInterval(intervalId);
-			if (rightAnswers >= 7){
+	function terrancePhillip () {
+			 if (rightAnswers >= 7) {
 				$('.question-display').html('<h1>Great Job, Buddy!</h1>');
 			} else if (rightAnswers < 7 && rightAnswers >= 4) {
 				$('.question-display').html('<h2>Way to give it the old Canadian try, Friend!</h2>');
@@ -196,6 +193,11 @@ window.onload = function() {
 			} else {
 				$('.question-display').html('<h2>That was just terrible, Guy!</h2>');
 			};
+	}
+
+	function endOfGame() {
+		clearInterval(intervalId);
+		terrancePhillip ();
 
 		$('.correctAnswer').empty()
 		$('.answerRow').hide();
@@ -207,8 +209,6 @@ window.onload = function() {
 		$('.reset').show();
 	}
 
-
-    //BUG: only works when an answer has been previously selected, not an issue if reset is not shown until GAME OVER
     $('.reset').on('click', function(){
     	intervalId;
 		count = 0;
@@ -216,14 +216,12 @@ window.onload = function() {
 		wrongAnswers = 0;
 		clearInterval(intervalId)
 		newQuestion();
-		console.log(count)
 		$('.resultRow').hide();
 		$('.answerRow').show();
-
 		$('.reset').hide();
 
     })
-}
+});
 
 
 
