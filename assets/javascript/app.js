@@ -117,15 +117,18 @@ $( document ).ready(function() {
 
 	$('.start').on("click", function() {
 		sign();
-		setTimeout(newQuestion, 2000)
+		setTimeout(newQuestion, 1200)
 		$('.chalkboard').hide().delay(1000).fadeIn(800);
 		$('.theBoys').hide().delay(800).fadeIn(500);
 		$('.start').hide();
 	})
 
 	function newQuestion() {
+			timerCount = 30;
+  			count++;
 			$('.correctAnswer').empty()
 			$('.timer').html('<h2>30</h2>');
+			$('.answerInput').prop('disabled', false);
 			$('.question-display').html(trivia[count].question);
 			$('#a').html('A). ' + trivia[count].a);
 			$('#b').html('B). ' + trivia[count].b);
@@ -159,6 +162,8 @@ $( document ).ready(function() {
     $(document).on("click", ".answerInput", rightWrong);
 
     function rightWrong () {
+    	$('.answerInput').prop('disabled', true);
+    	clearInterval(intervalId);
     	if(this.id === trivia[count].answer) {
     		$('.question-display')
     		.html($('<h1>That\'s correct, Buddy!<h1>')
@@ -174,9 +179,6 @@ $( document ).ready(function() {
     }
 
 	function result(){
-		clearInterval(intervalId);
-		timerCount = 30;
-  		count++;
 	  		if(count  === trivia.length) {
 	  			setTimeout(endOfGame, 3000)
 	  		} else {
